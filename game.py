@@ -22,9 +22,16 @@ DARK_GREY   = (30, 30, 30)
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH ,SCREEN_HEIGHT))
 pygame.display.set_caption(TITLE)
-
-#starting game loop
+clock = pygame.time.Clock()
 running = True
+# dt is delta time in seconds since last frame, used for framerate independent physics.
+dt = 0
+
+
+#TODO what does this MEAN?
+player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+
+#game loop
 while running:
     #handle event
         #this handles closing the app
@@ -34,7 +41,23 @@ while running:
 
     #update
     screen.fill(DARK_GREY)
-    #draw
-    pygame.display.flip()
+        #makes user as circle
+    pygame.draw.circle(screen, GHOST_WHITE, player_pos, 40)
 
+        #key movement
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        player_pos.y -= 300 * dt
+    if keys[pygame.K_s]:
+        player_pos.y += 300 * dt
+    if keys[pygame.K_a]:
+        player_pos.x -= 300 * dt
+    if keys[pygame.K_d]:
+        player_pos.x += 300 * dt
+    #display the updates
+    pygame.display.flip()
+    #limit FPS?
+    dt = clock.tick(60) / 1000
+
+#game ends when this is hit
 pygame.quit
