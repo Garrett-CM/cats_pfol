@@ -56,7 +56,7 @@ while running:
         player_pos.x += 300 * dt
     #display the updates
     pygame.display.flip()
-    #limit FPS?
+    #limit FPS? IDK but it allows the dot to move
     dt = clock.tick(60) / 1000
 
 #game ends when this is hit

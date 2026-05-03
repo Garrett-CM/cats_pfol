@@ -1,3 +1,4 @@
+.gitignore
 game_ai.py
 test.py
 pygame_ce_demo.py
