@@ -42,7 +42,7 @@ while running:
     #update
     screen.fill(DARK_GREY)
         #makes user as circle
-    pygame.draw.circle(screen, GHOST_WHITE, player_pos, 40)
+    pygame.draw.circle(screen, BLOOD_RED, player_pos, 40)
 
         #key movement
     keys = pygame.key.get_pressed()
@@ -54,6 +54,14 @@ while running:
         player_pos.x -= 300 * dt
     if keys[pygame.K_d]:
         player_pos.x += 300 * dt
+
+    #keep player on screen
+    if player_pos.x < 0 or player_pos.x > SCREEN_WIDTH:
+        player_pos.x = max(0, min(player_pos.x, SCREEN_WIDTH))
+    if player_pos.y < 0 or player_pos.y > SCREEN_HEIGHT:
+        player_pos.y = max(0, min(player_pos.y, SCREEN_HEIGHT))
+
+
     #display the updates
     pygame.display.flip()
     #limit FPS? IDK but it allows the dot to move
