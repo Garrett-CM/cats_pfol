@@ -41,7 +41,7 @@ while running:
 
     #update
     screen.fill(DARK_GREY)
-        #makes user as circle
+        #makes user a circle
     pygame.draw.circle(screen, BLOOD_RED, player_pos, 40)
 
         #key movement
