@@ -42,7 +42,7 @@ while running:
     #update
     screen.fill(DARK_GREY)
         #makes user a circle
-    pygame.draw.circle(screen, BLOOD_RED, player_pos, 40)
+    pygame.draw.circle(screen, PALE_GOLD, player_pos, 40)
 
         #key movement
     keys = pygame.key.get_pressed()
