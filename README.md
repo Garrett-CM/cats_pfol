@@ -18,6 +18,7 @@ A ROUGH 2D roguelite where you play as a snot spitting cat clearing rooms of ang
 ### 1. Clone or Download the Repository
 ```bash
 git clone [https://github.com/your-username/cats-paws-of-furry.git](https://github.com/your-username/cats-paws-of-furry.git)
+```
 
 ### 2. Running the Game
 cd cats-paws-of-furry
